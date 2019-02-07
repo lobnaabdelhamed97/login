@@ -19,6 +19,7 @@ public class UserImplementation implements UserInterface {
 	
 	@Override
 	public int insertUser(Users u) {
+		int departmentid=0;
   // flag to check if there is a new user or not
 		int status =0;
 		try {
@@ -32,19 +33,22 @@ public class UserImplementation implements UserInterface {
 			ResultSet departrs = departps.executeQuery();
 			while (departrs.next()) 
 			{
-				int departmentid=departrs.getInt("id");
+				 departmentid=departrs.getInt("id");
+				 
 				}
+			
 		
 			//inserting in db by the sql command in "" where the table name is users
 ps=conn.prepareStatement("insert into users(name,password,birthdate,address,phone,email,departid) values(?,?,?,?,?,?,?)");
 			//passing parameters
+
 			ps.setString(1, u.getUsername());
 			ps.setString(2,u.getPassword());
-			ps.setString(3, u.getDOB());
+			ps.setDate(3, u.getDOB());
 			ps.setString(4, u.getAddress());
 			ps.setString(5,u.getContact());
 			ps.setString(6, u.getEmail());
-		//	ps.setString(7,departmentid);
+			ps.setInt(7, departmentid);
 			status= ps.executeUpdate();
 			conn.close();
 			
@@ -80,10 +84,11 @@ ps=conn.prepareStatement("insert into users(name,password,birthdate,address,phon
 			//get time here 
 			//insert into users (lastlogindate) values (the time we get)
        }catch (Exception e){
+    	   
 			System.out.println(e);
 		}
 		
-		return null;
+		return u;
 	}
 	
 	

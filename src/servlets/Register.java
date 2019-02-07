@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +17,7 @@ import connections.Users;
 /**
  * Servlet implementation class Register
  */
-@WebServlet(name = "/Register",urlPatterns={"/home"})
+@WebServlet(name = "/Register",urlPatterns={"/Register"})
 public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -47,7 +48,7 @@ public class Register extends HttpServlet {
 		String contact = request.getParameter("contact");
 		String address = request.getParameter("address");
 
-		String dob = request.getParameter("DOB");
+		Date dob = request.getParameter("DOB");
 		String department =request.getParameter("department");
 
 		Users u =new Users(email,password,Uname,dob,contact,address,department) ;

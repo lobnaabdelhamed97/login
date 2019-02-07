@@ -15,7 +15,7 @@ import connections.Users;
 /**
  * Servlet implementation class Login
  */
-@WebServlet(name = "/Login" , urlPatterns={"/home"})
+@WebServlet(name = "/Login" , urlPatterns={"/Login"})
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -46,7 +46,7 @@ public class Login extends HttpServlet {
 	
 		//object from userinterface to deal with user implementation
 		Users u = uu.getUsers(email, password);
-	if(u==null)
+	if(u.getUsername()==null)
 	{	request.setAttribute("message", "data is not found go to register");
 	request.getRequestDispatcher("login.jsp").forward(request,response);
 	}

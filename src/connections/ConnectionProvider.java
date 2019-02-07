@@ -13,13 +13,14 @@ public class ConnectionProvider implements  MyProvider{
 				//my connection driver
 				Class.forName("com.mysql.jdbc.Driver");
 				//get the connection 
-				conn=DriverManager.getConnection(connurl, username, pass);
+				conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/logindb","root", "lobna1997");
 			if(conn!=null)
 				System.out.print("connection success");
 			}
 			
 			catch (Exception e){
 				System.out.println("connection unsuccessful");
+				e.printStackTrace();
 			}
 			
 			return conn ;

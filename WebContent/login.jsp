@@ -43,7 +43,7 @@ function validation()
 </div>
 <body>
 <div class="center">
-            <form name=loginForm id="sign_up_form" action="loginServlet" onsubmit="return validation()" >
+            <form name=loginForm id="sign_up_form" action="Login" method="post" onsubmit="return validation()" >
   <p> ${message}</p>
 
                 <div class="input-group"> 

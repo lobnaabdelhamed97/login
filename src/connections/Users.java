@@ -1,10 +1,12 @@
 package connections;
 
+import java.sql.Date;
+
 public class Users {
 private String email;
 private String password;
 private String username;
-private String DOB;
+private Date DOB;
 private String contact;
 private String address;
 private String department;
@@ -36,7 +38,7 @@ public void setPassword(String password) {
 public String getUsername() {
 	return username;
 }
-public Users(String email, String password, String username, String dOB, String contact , String address,String department) {
+public Users(String email, String password, String username, Date dOB, String contact , String address,String department) {
 	super();
 	this.email = email;
 	this.password = password;
@@ -46,10 +48,10 @@ public Users(String email, String password, String username, String dOB, String 
 	this.address = address;
 this.department=department;
 }
-public String getDOB() {
+public Date getDOB() {
 	return DOB;
 }
-public void setDOB(String dOB) {
+public void setDOB(Date dOB) {
 	DOB = dOB;
 }
 public String getContact() {

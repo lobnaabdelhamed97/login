@@ -46,7 +46,7 @@
     </div>
     <div class="input-group">
     <label>Birth date</label>
- <input type="date" name="DOB" id="DOB">
+ <input type="Date" name="DOB" id="DOB">
     </div>
     <div class="input-group">
       <label>Address</label>
